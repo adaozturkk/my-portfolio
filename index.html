@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ada Öztürk</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Ada Öztürk</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="about" class="hero">
+        <h1>Hi, I'm Ada.</h1>
+        <h2 class="gradient-text">Web Developer</h2>
+        <p>
+          I build web applications specializing in C#, ASP.NET Core, and SQL
+          databases, while crafting clean, responsive interfaces with React.
+        </p>
+      </section>
+
+      <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="card skill-card">
+            <h3>Languages</h3>
+            <p>C#, Python, JavaScript, SQL</p>
+          </div>
+          <div class="card skill-card">
+            <h3>Web & Frameworks</h3>
+            <p>
+              ASP.NET Core (MVC/Web API), Entity Framework Core, React, Tailwind
+              CSS
+            </p>
+          </div>
+          <div class="card skill-card">
+            <h3>Databases & Tools</h3>
+            <p>MySQL, SQL Server, Git, GitHub</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <article class="card project-card">
+            <span class="badge">ASP.NET Core & SQL</span>
+            <h3>Glowify</h3>
+            <p>
+              A full-stack e-commerce platform featuring an admin dashboard,
+              dynamic coupon system, Google OAuth 2.0 authentication, and Iyzico
+              payment integration.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <span class="badge">React & Tailwind CSS</span>
+            <h3>WeatherCast</h3>
+            <p>
+              A fully responsive weather application with real-time API
+              integration, hourly/daily forecasts, air pollution tracking, and
+              automatic geolocation.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <span class="badge">React & Tailwind CSS</span>
+            <h3>Expense Tracker</h3>
+            <p>
+              A lightweight financial tracker with persistent on-device storage,
+              built with reusable React components following clean UI
+              principles.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="contact-subtitle">
+          Interested in collaborating? Send me a message.
+        </p>
+
+        <form
+          id="contact-form"
+          class="card contact-form"
+          action="submit_form.php"
+          method="POST"
+        >
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="John Doe"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="john@example.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="How can we work together?"
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+          <p id="form-feedback"></p>
+        </form>
+
+        <div class="social-links">
+          <a href="https://github.com/adaozturkk" target="_blank">GitHub</a>
+          <span>|</span>
+          <a href="https://linkedin.com/in/adaozturkk" target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Ada Öztürk. Built with HTML, CSS, JS, and PHP.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
