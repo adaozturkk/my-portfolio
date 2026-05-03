@@ -10,6 +10,20 @@
   --badge-border: #3730a3; /* badge border */
   --text: #f1f5f9; /* main text */
   --text-muted: #94a3b8; /* secondary text */
+  --btn-text: #0d1117;   /* button text in dark mode */
+}
+
+body.light-mode {
+  --bg:           #f8fafc;   /* light gray page background */
+  --card-bg:      #ffffff;   /* white cards */
+  --border:       #e2e8f0;   /* soft gray border */
+  --accent:       #7c3aed;   /* deeper violet */
+  --accent-light: #6d28d9;   /* darker violet for hover */
+  --badge-bg:     #ede9fe;   /* pale violet badge background */
+  --badge-border: #c4b5fd;   /* light violet badge border */
+  --text:         #0f172a;   /* near black */
+  --text-muted:   #475569;   /* darker gray */
+  --btn-text:     #ffffff;   /* button text in light mode */
 }
 
 * {
@@ -64,6 +78,37 @@ body {
 .nav-links a:hover {
   color: var(--accent-light);
 }
+
+.theme-btn {
+  background: none;
+  border: none;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.theme-btn:hover {
+  color: var(--accent);
+}
+
+.theme-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Dark mode */
+#icon-sun  { display: block; }
+#icon-moon { display: none;  }
+
+/* Light mode */
+body.light-mode #icon-sun  { display: none;  }
+body.light-mode #icon-moon { display: block; }
 
 section {
   max-width: 1100px;
@@ -220,7 +265,7 @@ textarea:focus {
   padding: 0.9rem;
   margin-top: 0.5rem;
   background-color: var(--accent);
-  color: #0d1117;
+  color: var(--btn-text);
   border: none;
   border-radius: 8px;
   font-family: inherit;

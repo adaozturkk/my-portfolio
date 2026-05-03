@@ -66,3 +66,22 @@ window.addEventListener("scroll", function () {
 topButton.addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// Theme toggle
+
+const themeBtn = document.getElementById("theme-toggle");
+const body = document.body;
+
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-mode");
+}
+
+themeBtn.addEventListener("click", function () {
+  body.classList.toggle("light-mode");
+
+  if (body.classList.contains("light-mode")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
+});
