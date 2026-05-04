@@ -85,3 +85,20 @@ themeBtn.addEventListener("click", function () {
     localStorage.setItem("theme", "dark");
   }
 });
+
+// Typing animation
+ 
+const heroTitle = document.querySelector(".hero h1");
+const fullText = "Hi, I'm Ada.";
+let index = 0;
+ 
+heroTitle.textContent = "";
+ 
+const typingInterval = setInterval(function () {
+  heroTitle.textContent += fullText[index];
+  index++;
+ 
+  if (index === fullText.length) {
+    clearInterval(typingInterval);
+  }
+}, 80);
