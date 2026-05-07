@@ -5,6 +5,8 @@ const formFeedback = document.getElementById("form-feedback");
 
 if (contactForm) {
   contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
     let isValid = true;
     let errorMessages = [];
 
@@ -31,12 +33,37 @@ if (contactForm) {
     }
 
     if (!isValid) {
-      event.preventDefault();
       formFeedback.innerHTML = errorMessages.join("<br>");
-    } else {
-      formFeedback.style.color = "#a78bfa";
-      formFeedback.innerHTML = "Validation passed! Sending message...";
+      return;
     }
+
+    formFeedback.style.color = "#a78bfa";
+    formFeedback.innerHTML = "Sending message...";
+
+    const formData = new FormData(contactForm);
+
+    fetch("submit_form.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        if (data.success) {
+          formFeedback.style.color = "#a78bfa";
+          formFeedback.innerHTML = "Message sent successfully!";
+          contactForm.reset();
+        } else {
+          formFeedback.style.color = "#ef4444";
+          formFeedback.innerHTML = "Error: " + data.error;
+        }
+      })
+      .catch(function (error) {
+        formFeedback.style.color = "#ef4444";
+        formFeedback.innerHTML = "Something went wrong. Please try again.";
+        console.error("Fetch error:", error);
+      });
   });
 }
 
@@ -87,17 +114,17 @@ themeBtn.addEventListener("click", function () {
 });
 
 // Typing animation
- 
+
 const heroTitle = document.querySelector(".hero h1");
 const fullText = "Hi, I'm Ada.";
 let index = 0;
- 
+
 heroTitle.textContent = "";
- 
+
 const typingInterval = setInterval(function () {
   heroTitle.textContent += fullText[index];
   index++;
- 
+
   if (index === fullText.length) {
     clearInterval(typingInterval);
   }

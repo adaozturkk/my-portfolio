@@ -1,6 +1,8 @@
 <?php
 include 'db_connect.php';
 
+header('Content-Type: application/json');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $name = trim(htmlspecialchars($_POST['name']));
@@ -12,10 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $name, $email, $message);
 
     if ($stmt->execute()) {
-        header("Location: index.php#contact");
-        exit();
+        echo json_encode(["success" => true]);
     } else {
-        echo "Error sending message: " . $stmt->error;
+        echo json_encode(["success" => false, "error" => $stmt->error]);
     }
 
     $stmt->close();
