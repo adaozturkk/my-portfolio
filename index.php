@@ -1,3 +1,7 @@
+<?php 
+include 'db_connect.php'; 
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -87,44 +91,27 @@
       <section id="projects">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
-          <article class="card project-card">
-            <span class="badge">ASP.NET Core & SQL</span>
-            <h3>Glowify</h3>
-            <p>
-              A full-stack e-commerce platform featuring an admin dashboard,
-              dynamic coupon system, Google OAuth 2.0 authentication, and Iyzico
-              payment integration.
-            </p>
-            <a href="https://github.com/adaozturkk/glowify" target="_blank" class="github-link">
-              View on GitHub ↗
-            </a>
-          </article>
+          <?php
+          $sql = "SELECT * FROM projects";
+          $result = $conn->query($sql);
 
-          <article class="card project-card">
-            <span class="badge">React & Tailwind CSS</span>
-            <h3>WeatherCast</h3>
-            <p>
-              A fully responsive weather application with real-time API
-              integration, hourly/daily forecasts, air pollution tracking, and
-              automatic geolocation.
-            </p>
-            <a href="https://github.com/adaozturkk/weathercast" target="_blank" class="github-link">
-              View on GitHub ↗
-            </a>
-          </article>
-
-          <article class="card project-card">
-            <span class="badge">React & Tailwind CSS</span>
-            <h3>Expense Tracker</h3>
-            <p>
-              A lightweight financial tracker with persistent on-device storage,
-              built with reusable React components following clean UI
-              principles.
-            </p>
-            <a href="https://github.com/adaozturkk/expense-tracker" target="_blank" class="github-link">
-              View on GitHub ↗
-            </a>
-          </article>
+          if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
+          ?>
+                <article class="card project-card">
+                  <span class="badge"><?php echo htmlspecialchars($row['badge']); ?></span>
+                  <h3><?php echo htmlspecialchars($row['title']); ?></h3>
+                  <p><?php echo htmlspecialchars($row['description']); ?></p>
+                  <a href="<?php echo htmlspecialchars($row['github_link']); ?>" target="_blank" class="github-link">
+                    View on GitHub ↗
+                  </a>
+                </article>
+          <?php
+              }
+          } else {
+              echo "<p>New projects coming soon!</p>";
+          }
+          ?>
         </div>
       </section>
 
