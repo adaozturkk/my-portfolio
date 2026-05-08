@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_project'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ada Öztürk - Edit Project</title>
+    <title>Ada Öztürk | Edit Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
