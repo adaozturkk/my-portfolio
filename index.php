@@ -77,8 +77,7 @@ include 'db_connect.php';
           <div class="card skill-card">
             <h3>Web & Frameworks</h3>
             <p>
-              ASP.NET Core (MVC/Web API), Entity Framework Core, React, Tailwind
-              CSS
+              ASP.NET Core (MVC/Web API), Entity Framework Core, React, Tailwind CSS
             </p>
           </div>
           <div class="card skill-card">
@@ -164,15 +163,14 @@ include 'db_connect.php';
         <div class="social-links">
           <a href="https://github.com/adaozturkk" target="_blank">GitHub</a>
           <span>|</span>
-          <a href="https://linkedin.com/in/adaozturkk" target="_blank"
-            >LinkedIn</a
-          >
+          <a href="https://linkedin.com/in/adaozturkk" target="_blank">LinkedIn</a>
         </div>
       </section>
     </main>
 
     <footer>
       <p>&copy; 2026 Ada Öztürk. Built with HTML, CSS, JS, and PHP.</p>
+      <a href="admin_login.php" class="footer-admin-link">Admin Login</a>
     </footer>
 
     <script src="script.js"></script>

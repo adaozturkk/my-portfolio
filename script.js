@@ -103,29 +103,34 @@ if (localStorage.getItem("theme") === "light") {
   body.classList.add("light-mode");
 }
 
-themeBtn.addEventListener("click", function () {
-  body.classList.toggle("light-mode");
+if (themeBtn) {
+  themeBtn.addEventListener("click", function () {
+    body.classList.toggle("light-mode");
 
-  if (body.classList.contains("light-mode")) {
-    localStorage.setItem("theme", "light");
-  } else {
-    localStorage.setItem("theme", "dark");
-  }
-});
+    if (body.classList.contains("light-mode")) {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
+  });
+}
 
 // Typing animation
 
 const heroTitle = document.querySelector(".hero h1");
-const fullText = "Hi, I'm Ada.";
-let index = 0;
 
-heroTitle.textContent = "";
+if (heroTitle) {
+  const fullText = "Hi, I'm Ada.";
+  let index = 0;
 
-const typingInterval = setInterval(function () {
-  heroTitle.textContent += fullText[index];
-  index++;
+  heroTitle.textContent = "";
 
-  if (index === fullText.length) {
-    clearInterval(typingInterval);
-  }
-}, 80);
+  const typingInterval = setInterval(function () {
+    heroTitle.textContent += fullText[index];
+    index++;
+
+    if (index === fullText.length) {
+      clearInterval(typingInterval);
+    }
+  }, 80);
+}

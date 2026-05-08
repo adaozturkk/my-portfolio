@@ -342,7 +342,20 @@ footer {
   font-size: 0.85rem;
 }
 
-/* Admin Login Page */
+.footer-admin-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footer-admin-link:hover {
+  color: var(--accent);
+}
+
+/* ── Admin Login Page ── */
 
 .admin-login-main {
   display: flex;
@@ -357,6 +370,18 @@ footer {
   max-width: 400px;
 }
 
+.admin-login-card:hover {
+  transform: none;
+}
+
+.admin-login-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .error-message {
   color: #ef4444;
   text-align: center;
@@ -367,4 +392,118 @@ footer {
 .back-btn {
   text-align: center;
   margin-top: 1rem;
+}
+
+/* ── Admin Dashboard Page ── */
+
+.admin-hero {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.admin-section {
+  padding-top: 0;
+}
+
+.manage-section {
+  padding-top: 3rem;
+}
+
+.manage-section .card {
+  cursor: default;
+}
+
+.manage-section .card:hover {
+  transform: none;
+  border-color: var(--border);
+}
+
+.feedback-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.feedback-success {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.feedback-error {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.logout-link {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.logout-link:hover {
+  color: #dc2626;
+  text-decoration: underline;
+}
+
+/* Project Management Table */
+
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background-color: var(--bg);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.projects-table th {
+  background-color: var(--card-bg);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.edit-btn {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.edit-btn:hover {
+  background-color: rgba(59, 130, 246, 0.22);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.delete-btn {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.delete-btn:hover {
+  background-color: rgba(239, 68, 68, 0.22);
+  border-color: rgba(239, 68, 68, 0.5);
 }

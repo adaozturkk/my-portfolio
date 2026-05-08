@@ -32,14 +32,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ada Öztürk</title>
+    <title>Ada Öztürk – Admin</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="admin-login-main">
-        <div class="card contact-form admin-login-card">
-            <h2 class="section-title" style="margin-bottom: 1rem;">Admin Access</h2>
-            
+        <div class="card admin-login-card">
+
+            <h2 class="admin-login-title">Admin Access</h2>
+
             <?php if ($error_message): ?>
                 <p class="error-message">
                     <?php echo $error_message; ?>
@@ -57,10 +58,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <button type="submit" class="submit-btn">Login</button>
             </form>
-            
+
             <div class="back-btn">
                 <a href="index.php" class="github-link">← Back to Portfolio</a>
             </div>
+
         </div>
     </main>
 </body>
