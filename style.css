@@ -394,6 +394,12 @@ footer {
   margin-top: 1rem;
 }
 
+.theme-toggle-wrapper {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+}
+
 /* ── Admin Dashboard Page ── */
 
 .admin-hero {
@@ -483,7 +489,10 @@ footer {
   border: 1px solid transparent;
   cursor: pointer;
   font-family: inherit;
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
 }
 
 .edit-btn {
