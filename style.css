@@ -10,20 +10,20 @@
   --badge-border: #3730a3; /* badge border */
   --text: #f1f5f9; /* main text */
   --text-muted: #94a3b8; /* secondary text */
-  --btn-text: #0d1117;   /* button text in dark mode */
+  --btn-text: #0d1117; /* button text in dark mode */
 }
 
 body.light-mode {
-  --bg:           #f8fafc;   /* light gray page background */
-  --card-bg:      #ffffff;   /* white cards */
-  --border:       #e2e8f0;   /* soft gray border */
-  --accent:       #7c3aed;   /* deeper violet */
-  --accent-light: #6d28d9;   /* darker violet for hover */
-  --badge-bg:     #ede9fe;   /* pale violet badge background */
-  --badge-border: #c4b5fd;   /* light violet badge border */
-  --text:         #0f172a;   /* near black */
-  --text-muted:   #475569;   /* darker gray */
-  --btn-text:     #ffffff;   /* button text in light mode */
+  --bg: #f8fafc; /* light gray page background */
+  --card-bg: #ffffff; /* white cards */
+  --border: #e2e8f0; /* soft gray border */
+  --accent: #7c3aed; /* deeper violet */
+  --accent-light: #6d28d9; /* darker violet for hover */
+  --badge-bg: #ede9fe; /* pale violet badge background */
+  --badge-border: #c4b5fd; /* light violet badge border */
+  --text: #0f172a; /* near black */
+  --text-muted: #475569; /* darker gray */
+  --btn-text: #ffffff; /* button text in light mode */
 }
 
 * {
@@ -103,12 +103,20 @@ body {
 }
 
 /* Dark mode */
-#icon-sun  { display: block; }
-#icon-moon { display: none;  }
+#icon-sun {
+  display: block;
+}
+#icon-moon {
+  display: none;
+}
 
 /* Light mode */
-body.light-mode #icon-sun  { display: none;  }
-body.light-mode #icon-moon { display: block; }
+body.light-mode #icon-sun {
+  display: none;
+}
+body.light-mode #icon-moon {
+  display: block;
+}
 
 section {
   max-width: 1100px;
@@ -332,4 +340,31 @@ footer {
   border-top: 1px solid var(--border);
   color: var(--text-muted);
   font-size: 0.85rem;
+}
+
+/* Admin Login Page */
+
+.admin-login-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.error-message {
+  color: #ef4444;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.back-btn {
+  text-align: center;
+  margin-top: 1rem;
 }
