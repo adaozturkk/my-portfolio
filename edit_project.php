@@ -31,10 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_project'])) {
     }
 
     $id = $_POST['id'];
-    $title = trim(htmlspecialchars($_POST['title']));
-    $badge = trim(htmlspecialchars($_POST['badge']));
-    $description = trim(htmlspecialchars($_POST['description']));
-    $github_link = trim(htmlspecialchars($_POST['github_link']));
+    $title = trim($_POST['title']);
+    $badge = trim($_POST['badge']);
+    $description = trim($_POST['description']);
+    $github_link = trim($_POST['github_link']);
 
     $stmt = $conn->prepare("UPDATE projects SET title=?, badge=?, description=?, github_link=? WHERE id=?");
     $stmt->bind_param("ssssi", $title, $badge, $description, $github_link, $id);

@@ -1,31 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
+/* ── Variables ── */
 :root {
-  --bg: #0d1117; /* page background */
-  --card-bg: #161b22; /* card and navbar background */
-  --border: #21262d; /* borders */
-  --accent: #a78bfa; /* violet - main accent */
-  --accent-light: #c4b5fd; /* lighter violet for hover */
-  --badge-bg: #1e1b4b; /* dark violet for badges */
-  --badge-border: #3730a3; /* badge border */
-  --text: #f1f5f9; /* main text */
-  --text-muted: #94a3b8; /* secondary text */
-  --btn-text: #0d1117; /* button text in dark mode */
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #21262d;
+  --accent: #a78bfa;
+  --accent-light: #c4b5fd;
+  --badge-bg: #1e1b4b;
+  --badge-border: #3730a3;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --btn-text: #0d1117;
 }
 
 body.light-mode {
-  --bg: #f8fafc; /* light gray page background */
-  --card-bg: #ffffff; /* white cards */
-  --border: #e2e8f0; /* soft gray border */
-  --accent: #7c3aed; /* deeper violet */
-  --accent-light: #6d28d9; /* darker violet for hover */
-  --badge-bg: #ede9fe; /* pale violet badge background */
-  --badge-border: #c4b5fd; /* light violet badge border */
-  --text: #0f172a; /* near black */
-  --text-muted: #475569; /* darker gray */
-  --btn-text: #ffffff; /* button text in light mode */
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --border: #e2e8f0;
+  --accent: #7c3aed;
+  --accent-light: #6d28d9;
+  --badge-bg: #ede9fe;
+  --badge-border: #c4b5fd;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --btn-text: #ffffff;
 }
 
+/* ── Base ── */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -43,6 +45,7 @@ body {
   line-height: 1.7;
 }
 
+/* ── Navbar ── */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -79,6 +82,7 @@ body {
   color: var(--accent-light);
 }
 
+/* ── Theme toggle button ── */
 .theme-btn {
   background: none;
   border: none;
@@ -102,7 +106,7 @@ body {
   height: 28px;
 }
 
-/* Dark mode */
+/* Dark mode: show sun, hide moon */
 #icon-sun {
   display: block;
 }
@@ -110,7 +114,7 @@ body {
   display: none;
 }
 
-/* Light mode */
+/* Light mode: show moon, hide sun */
 body.light-mode #icon-sun {
   display: none;
 }
@@ -118,6 +122,7 @@ body.light-mode #icon-moon {
   display: block;
 }
 
+/* ── Sections ── */
 section {
   max-width: 1100px;
   margin: 0 auto;
@@ -132,6 +137,7 @@ section {
   margin-bottom: 2.5rem;
 }
 
+/* ── Hero ── */
 .hero {
   text-align: center;
   padding-top: 6rem;
@@ -162,6 +168,7 @@ section {
   margin: 0 auto;
 }
 
+/* ── Cards ── */
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--border);
@@ -177,6 +184,7 @@ section {
   transform: translateY(-4px);
 }
 
+/* ── Skills ── */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -195,6 +203,7 @@ section {
   font-size: 0.95rem;
 }
 
+/* ── Projects ── */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -239,6 +248,7 @@ section {
   text-decoration: underline;
 }
 
+/* ── Contact ── */
 .contact-subtitle {
   text-align: center;
   color: var(--text-muted);
@@ -312,6 +322,7 @@ textarea:focus {
   font-weight: 600;
 }
 
+/* ── Social links ── */
 .social-links {
   text-align: center;
   margin-top: 2rem;
@@ -334,6 +345,7 @@ textarea:focus {
   text-decoration: underline;
 }
 
+/* ── Footer ── */
 footer {
   text-align: center;
   padding: 2rem;
@@ -355,8 +367,7 @@ footer {
   color: var(--accent);
 }
 
-/* ── Admin Login Page ── */
-
+/* ── Admin Login ── */
 .admin-login-main {
   display: flex;
   justify-content: center;
@@ -385,8 +396,9 @@ footer {
 .error-message {
   color: #ef4444;
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
 .back-btn {
@@ -400,8 +412,7 @@ footer {
   right: 2rem;
 }
 
-/* ── Admin Dashboard Page ── */
-
+/* ── Admin Dashboard ── */
 .admin-hero {
   padding-top: 3rem;
   padding-bottom: 2rem;
@@ -417,11 +428,11 @@ footer {
 
 .manage-section .card {
   cursor: default;
+  overflow-x: auto;
 }
 
 .manage-section .card:hover {
   transform: none;
-  border-color: var(--border);
 }
 
 .feedback-container {
@@ -439,26 +450,19 @@ footer {
   font-weight: 700;
 }
 
-.logout-link {
-  color: #ef4444;
-  font-weight: 600;
-}
-
 .logout-link:hover {
-  color: #dc2626;
   text-decoration: underline;
 }
 
-/* Project Management Table */
-
+/* ── Admin Table ── */
 .projects-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1.5rem;
   background-color: var(--bg);
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border);
+  min-width: 400px;
 }
 
 .projects-table th,
@@ -477,13 +481,14 @@ footer {
 .action-buttons {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
 }
 
 .edit-btn,
 .delete-btn {
   padding: 0.4rem 0.9rem;
   border-radius: 6px;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
   border: 1px solid transparent;
@@ -515,4 +520,64 @@ footer {
 .delete-btn:hover {
   background-color: rgba(239, 68, 68, 0.22);
   border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 0.85rem 1.25rem;
+    row-gap: 0;
+    column-gap: 0;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .nav-links a {
+    font-size: 0.88rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .gradient-text {
+    font-size: 1.15rem;
+  }
+  .hero p {
+    font-size: 0.98rem;
+  }
+
+  section {
+    padding: 3rem 1.25rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manage-section .card {
+    padding: 1rem;
+  }
+
+  .contact-form,
+  .admin-login-card {
+    max-width: 100%;
+  }
 }

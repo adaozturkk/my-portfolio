@@ -21,11 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_project'])) {
         die("Invalid request.");
     }
 
-    $title = trim(htmlspecialchars($_POST['title']));
-    $badge = trim(htmlspecialchars($_POST['badge']));
-    $description = trim(htmlspecialchars($_POST['description']));
-    $github_link = trim(htmlspecialchars($_POST['github_link']));
-
+    $title = trim($_POST['title']);
+    $badge = trim($_POST['badge']);
+    $description = trim($_POST['description']);
+    $github_link = trim($_POST['github_link']);
+    
     $stmt = $conn->prepare("INSERT INTO projects (title, badge, description, github_link) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssss", $title, $badge, $description, $github_link);
 
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_project'])) {
             </form>
         </section>
 
-        <section id="manage-projects" class="admin-section" style="padding-top: 3rem;">
+        <section id="manage-projects" class="admin-section manage-section">
             <h2 class="section-title">Manage Projects</h2>
             <div class="card">
                 <table class="projects-table">

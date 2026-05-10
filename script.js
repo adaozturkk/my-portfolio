@@ -117,7 +117,7 @@ if (themeBtn) {
 
 // Typing animation
 
-const heroTitle = document.querySelector(".hero h1");
+const heroTitle = document.querySelector("#about h1");
 
 if (heroTitle) {
   const fullText = "Hi, I'm Ada.";
