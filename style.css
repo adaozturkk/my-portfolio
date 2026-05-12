@@ -726,4 +726,26 @@ footer {
     width: 100%;
     margin: 0;
   }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .action-buttons form {
+    width: 100%;
+  }
+
+  .edit-btn,
+  .delete-btn,
+  .view-btn {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  .projects-table th, 
+  .projects-table td {
+    white-space: nowrap;
+  }
 }
