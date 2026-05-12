@@ -3,6 +3,7 @@ include 'db_connect.php';
 
 header('Content-Type: application/json');
 
+// Handle AJAX contact form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $name = trim(htmlspecialchars($_POST['name']));
@@ -11,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt = $conn->prepare("INSERT INTO messages (name, email, message) VALUES (?, ?, ?)");
     
+    // Save cleaned message data into the database
     $stmt->bind_param("sss", $name, $email, $message);
 
     if ($stmt->execute()) {

@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// Redirect already logged in admin to dashboard
 if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
     header("Location: admin_dashboard.php");
     exit();
@@ -14,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     include 'admin_credentials.php';
 
+    // Check credentials stored in admin_credentials.php
     if ($username === $admin_user && $password === $admin_pass) {
         $_SESSION['admin_logged_in'] = true;
 

@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// Require admin login to edit projects
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
     header("Location: admin_login.php");
     exit();

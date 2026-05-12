@@ -91,6 +91,7 @@ include 'db_connect.php';
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
           <?php
+          // Load project cards from the database
           $sql = "SELECT * FROM projects";
           $result = $conn->query($sql);
 

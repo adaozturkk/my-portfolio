@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// Clear session and logout admin
 $_SESSION = array();
 
 session_destroy();
