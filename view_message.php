@@ -65,6 +65,10 @@ if (!$message_data) {
                             <?php echo htmlspecialchars($message_data['email']); ?>
                         </a>
                     </p>
+                    <p>
+                        <strong>Date:</strong> 
+                        <?php echo date('d F Y, H:i', strtotime($message_data['created_at'])); ?>
+                    </p>
                 </div>
                 
                 <div class="message-body"><?php echo htmlspecialchars($message_data['message']); ?></div>

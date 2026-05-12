@@ -191,12 +191,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_message'])) {
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $sql = "SELECT id, name, email FROM messages ORDER BY id DESC";
+                        $sql = "SELECT id, name, email, created_at FROM messages ORDER BY id DESC";
                         $result = $conn->query($sql);
 
                         if ($result && $result->num_rows > 0) {
@@ -208,6 +209,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_message'])) {
                                         <a href="mailto:<?php echo htmlspecialchars($row['email']); ?>" class="email-link">
                                             <?php echo htmlspecialchars($row['email']); ?>
                                         </a>
+                                    </td>
+                                    <td class="date">
+                                        <?php echo date('d M Y, H:i', strtotime($row['created_at'])); ?>
                                     </td>
                                     <td class="action-buttons">
                                         <a href="view_message.php?id=<?php echo $row['id']; ?>" class="view-btn">Read</a>

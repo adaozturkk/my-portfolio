@@ -534,6 +534,11 @@ footer {
   text-decoration: underline;
 }
 
+.date {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
 .message-preview {
   max-width: 250px;
   white-space: nowrap;
@@ -713,7 +718,7 @@ footer {
   }
 
   .button-group {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 0.75rem;
   }
 
