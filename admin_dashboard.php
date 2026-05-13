@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_message'])) {
         <section id="manage-projects" class="admin-section manage-section">
             <h2 class="section-title">Manage Projects</h2>
             <div class="card">
-                <table class="projects-table">
+                <table class="data-table">
                     <thead>
                         <tr>
                             <th>Title</th>
@@ -186,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_message'])) {
         <section id="manage-messages" class="admin-section manage-section">
             <h2 class="section-title">Inbox (Messages)</h2>
             <div class="card">
-                <table class="projects-table">
+                <table class="data-table">
                     <thead>
                         <tr>
                             <th>Name</th>

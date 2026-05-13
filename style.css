@@ -455,7 +455,7 @@ footer {
 }
 
 /* ── Admin Table ── */
-.projects-table {
+.data-table {
   width: 100%;
   border-collapse: collapse;
   background-color: var(--bg);
@@ -465,14 +465,14 @@ footer {
   min-width: 400px;
 }
 
-.projects-table th,
-.projects-table td {
+.data-table th,
+.data-table td {
   padding: 1rem;
   text-align: left;
   border-bottom: 1px solid var(--border);
 }
 
-.projects-table th {
+.data-table th {
   background-color: var(--card-bg);
   color: var(--accent);
   font-weight: 700;
@@ -553,13 +553,6 @@ footer {
 #manage-messages .card {
   max-height: 400px;
   overflow-y: auto;
-}
-
-#manage-messages thead th {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 1px 0 var(--border);
 }
 
 .view-btn {
@@ -744,8 +737,8 @@ footer {
     display: block;
   }
 
-  .projects-table th, 
-  .projects-table td {
+  .data-table th,
+  .data-table td {
     white-space: nowrap;
   }
 }
